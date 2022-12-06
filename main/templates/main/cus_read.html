@@ -1,0 +1,21 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+<table border="1", cellpadding="5" cellspacing="5">
+
+    <td>ID</td>
+    <td>First Name</td>
+    <td>last Name</td>
+    <td>Age</td>
+    {% for i in data %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.f_name}}</td>
+        <td>{{i.l_name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<button onclick="location.href='../'" type="button">Customer Main Page</button>
+{% endblock %}
