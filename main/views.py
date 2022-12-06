@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Customer
 from .forms import CustomerCreateForm, CustomerEditForm, CustomerDeleteForm
-
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 
@@ -70,12 +70,15 @@ def cus_delete(response):
     if response.method == "POST":
         form = CustomerDeleteForm(response.POST)
 
-        if form.is_valid():
-            id_ = form.cleaned_data["id"]
-            c = Customer.objects.get(id=id_)
-            c.delete()
-        # Redirects to customer/read
-        return HttpResponseRedirect("../read")
+        try:
+            if form.is_valid():
+                id_ = form.cleaned_data["id"]
+                c = Customer.objects.get(id=id_)
+                c.delete()
+            # Redirects to customer/read
+            return HttpResponseRedirect("../read")
+        except ObjectDoesNotExist:
+            return HttpResponseRedirect("../")
     else:
         form = CustomerDeleteForm()
-        return render(response, "main/cus_edit.html", {"form": form})
+        return render(response, "main/cus_delete.html", {"form": form})
