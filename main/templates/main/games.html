@@ -1,0 +1,21 @@
+{% extends 'main/index.html' %}
+
+{% block content %}<div align="center">
+<table border="1", cellpadding="5" cellspacing="5">
+
+    <td>ID</td>
+    <td>Game Name</td>
+    <td>Qty Sold</td>
+    <td>Game Studio</td>
+    {% for i in data %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.g_name}}</td>
+        <td>{{i.g_qty_sold}}</td>
+        <td>{{i.gs_id.studio_name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+    <button onclick="location.href='../'" type="button">Main Page</button></div>
+{% endblock %}

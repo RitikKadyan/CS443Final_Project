@@ -1,0 +1,10 @@
+{% extends 'main/index.html' %}
+
+{% block content %}<div align="center">
+<form method="post" action="/employee/create/" xmlns="http://www.w3.org/1999/html">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit", name="save">Create</button>
+</form>
+    <button onclick="location.href='../'" type="button">Employee Page</button></div>
+{% endblock %}

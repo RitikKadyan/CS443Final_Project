@@ -1,11 +1,10 @@
 {% extends 'main/index.html' %}
 
-{% block content %}
-<div align="center">
-<form method="post" action="/customer/edit/" xmlns="http://www.w3.org/1999/html">
+{% block content %}<div align="center">
+<form method="post" action="/cus/buy/" xmlns="http://www.w3.org/1999/html">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit", name="save">Update</button>
+    <button type="submit" name="save">Buy</button>
 </form>
     <button onclick="location.href='../'" type="button">Customer Page</button></div>
 {% endblock %}

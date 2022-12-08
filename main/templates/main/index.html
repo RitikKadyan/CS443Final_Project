@@ -1,13 +1,44 @@
 <html>
 <head>
-<title>idk</title>
+<title>Final project</title>
 </head>
+<style>
+button {
+  background-color: white; /* Green */
+  border: 2px solid black;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover{
+    background-color: #4e5764;
+  color: white;
+}
+
+table{
+    border-color: black;
+    border-width: 2px;
+}
+
+</style>
 
 
-<body>
+<body style="background-color:#4e5764; align-content: center; position: absolute; top: 20%; left:45%">
     <div id="content", name="content">
         {% block content %}
-        <button onclick="location.href='customer'" type="button">Customer</button>
+        <div align="center">
+        <button onclick="location.href='../customer/'" type="button">Customer(ADMIN)</button><br><br>
+        <button onclick="location.href='../employee/'" type="button">Employee(ADMIN)</button><br><br>
+        <button onclick="location.href='../games/'" type="button">Games(ADMIN)</button><br><br>
+        <button onclick="location.href='../cus/'" type="button">Customer View</button><br><br>
+            <button onclick="location.href='../register/'" type="button">Register</button></div>
         {% endblock %}
     </div>
 </body>
