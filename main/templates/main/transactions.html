@@ -1,0 +1,25 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+<div align="center">
+<table border="1", cellpadding="5" cellspacing="5">
+
+    <td>ID</td>
+    <td>User ID</td>
+    <td>Game ID</td>
+    <td>Game</td>
+    <td>In-App-Purchase ID</td>
+    {% for i in data %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.c_id.id}}</td>
+        <td>{{i.g_id.id}}</td>
+        <td>{{i.g_id.g_name}}</td>
+        <td>{{i.iap_id.id}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<br>
+<button onclick="location.href='../index'" type="button">Back</button>
+{% endblock %}

@@ -116,7 +116,7 @@ def emp_read(response):
     data = []
     for e in emp.all():
         data.append(e)
-    return render(response, "main/emp_read.html", {"emp": emp, "data": data})  # Render page and pass customers
+    return render(response, "main/emp_read.html", {"emp": emp, "data": data})
 
 
 def emp_edit(response):
@@ -166,7 +166,7 @@ def games(response):
     data = []
     for g in game.all():
         data.append(g)
-    return render(response, "main/games.html", {"games": game, "data": data})  # Render page and pass customers
+    return render(response, "main/games.html", {"games": game, "data": data})
 
 
 def cus_view(response):
@@ -199,7 +199,7 @@ def cus_order(response):
     for e in t.all():
         if e.c_id.username == response.user.username:
             data.append(e)
-    return render(response, "main/cus_order.html", {"t": t, "data": data})  # Render page and pass customers
+    return render(response, "main/cus_order.html", {"t": t, "data": data})
 
 
 def register(response):
@@ -223,3 +223,12 @@ def register(response):
 
 def login(response):
     return redirect("../login/")
+
+
+def transaction(response):
+    t = Transaction.objects  # Get all Transactions
+    data = []
+    for tr in t.all():
+        data.append(tr)
+    return render(response, "main/transactions.html", {"t": t, "data": data})
+

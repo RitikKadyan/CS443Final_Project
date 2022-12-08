@@ -18,6 +18,7 @@ urlpatterns = [
     path("employee/delete/", views.emp_delete, name="emp_delete"),
 
     path("games/", views.games, name="games"),
+    path("transactions/", views.transaction, name="transactions"),
 
     path("cus/", views.cus_view, name="cus_view"),
     path("cus/buy/", views.cus_buy, name="cus_buy"),
